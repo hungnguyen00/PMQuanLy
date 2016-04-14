@@ -15,7 +15,7 @@ namespace PMQuanLy
         SQLiteConnection conn = new SQLiteConnection();
         SQLiteCommand cmd = new SQLiteCommand();
         SQLiteDataAdapter adapter = new SQLiteDataAdapter();
-        DataTable dt1 = new DataTable();
+        DataTable dt1;
         BindingSource bs = new BindingSource();
         String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.sqlite";
 
@@ -26,10 +26,12 @@ namespace PMQuanLy
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadData();
+            xtraTabControl1.SelectedTabPageIndex = 0;
+            LoadDataProduct();
         }
-        private void LoadData()
+        private void LoadDataProduct()
         {
+            dt1 = new DataTable();
             cmd.Connection = conn;
             adapter.SelectCommand = cmd;
             //conn.ConnectionString = @"data source=E:\visual_workspace\PMQuanLy\PMQuanLy\quanly_db.sqlite";
@@ -39,8 +41,36 @@ namespace PMQuanLy
             dt1.Rows.Clear();
             adapter.Fill(dt1);
             bs.DataSource = dt1;
-            gridControl1.DataSource = bs;
+            gridProduct.DataSource = bs;
+        }
+        private void LoadDataProductDetail()
+        {
+            dt1 = new DataTable();
+            cmd.Connection = conn;
+            adapter.SelectCommand = cmd;
+            //conn.ConnectionString = @"data source=E:\visual_workspace\PMQuanLy\PMQuanLy\quanly_db.sqlite";
+            conn.ConnectionString = @"data source=" + cnnString;
+            cmd.CommandText = "select code, product_detail_id, weight from product_detail";
+            adapter.SelectCommand = cmd;
+            dt1.Rows.Clear();
+            adapter.Fill(dt1);
+            bs.DataSource = dt1;
+            gridProductDetail.DataSource = bs;
         }
 
+        private void navBarProduct_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xtraTabControl1.SelectedTabPageIndex = 0;
+            LoadDataProduct();
+        }
+
+        private void navBarProductDetail_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xtraTabControl1.SelectedTabPageIndex = 1;
+            LoadDataProductDetail();
+        }
+        private void navBarOrder_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+        }
     }
 }

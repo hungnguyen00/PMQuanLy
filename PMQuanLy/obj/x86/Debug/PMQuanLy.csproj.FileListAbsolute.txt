@@ -6,3 +6,14 @@ E:\workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.csproj.GenerateResource.Ca
 E:\workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.exe.licenses
 E:\workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.exe
 E:\workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.pdb
+E:\visual_workspace\PMQuanLy\PMQuanLy\bin\Debug\PMQuanLy.exe
+E:\visual_workspace\PMQuanLy\PMQuanLy\bin\Debug\PMQuanLy.pdb
+E:\visual_workspace\PMQuanLy\PMQuanLy\bin\Debug\System.Data.SQLite.dll
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.Form1.resources
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.Properties.Resources.resources
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.exe.licenses
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.exe
+E:\visual_workspace\PMQuanLy\PMQuanLy\obj\x86\Debug\PMQuanLy.pdb
