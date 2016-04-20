@@ -122,8 +122,8 @@
     </Compile>
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\MemberModel.cs" />
-    <Compile Include="Model\ProductDetailModel.cs" />
-    <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Model\InventoryModel.cs" />
+    <Compile Include="Model\ListProductModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">

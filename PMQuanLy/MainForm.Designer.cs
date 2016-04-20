@@ -52,6 +52,17 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelOrder = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.gridOrder3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridOrder = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridOrder2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductGrid)).BeginInit();
             this.panelProductGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).BeginInit();
@@ -69,6 +80,17 @@
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelOrder)).BeginInit();
+            this.panelOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // bar3
@@ -110,7 +132,7 @@
             this.panelProductGrid.Controls.Add(this.gridProduct);
             this.panelProductGrid.Location = new System.Drawing.Point(2, 62);
             this.panelProductGrid.Name = "panelProductGrid";
-            this.panelProductGrid.Size = new System.Drawing.Size(865, 450);
+            this.panelProductGrid.Size = new System.Drawing.Size(925, 552);
             this.panelProductGrid.TabIndex = 1;
             // 
             // labelControl1
@@ -126,7 +148,7 @@
             this.gridProduct.Location = new System.Drawing.Point(2, 2);
             this.gridProduct.MainView = this.gridView1;
             this.gridProduct.Name = "gridProduct";
-            this.gridProduct.Size = new System.Drawing.Size(861, 446);
+            this.gridProduct.Size = new System.Drawing.Size(921, 548);
             this.gridProduct.TabIndex = 0;
             this.gridProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -152,7 +174,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 140;
-            this.navBarControl1.Size = new System.Drawing.Size(140, 520);
+            this.navBarControl1.Size = new System.Drawing.Size(140, 622);
             this.navBarControl1.TabIndex = 5;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -187,6 +209,7 @@
             // 
             // navBarOrder
             // 
+            this.navBarOrder.Caption = "Order";
             this.navBarOrder.Name = "navBarOrder";
             this.navBarOrder.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarOrder_LinkClicked);
             // 
@@ -198,7 +221,7 @@
             this.panelProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProduct.Location = new System.Drawing.Point(0, 0);
             this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(866, 514);
+            this.panelProduct.Size = new System.Drawing.Size(926, 616);
             this.panelProduct.TabIndex = 6;
             // 
             // panelProductDetail
@@ -208,7 +231,7 @@
             this.panelProductDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProductDetail.Location = new System.Drawing.Point(0, 0);
             this.panelProductDetail.Name = "panelProductDetail";
-            this.panelProductDetail.Size = new System.Drawing.Size(866, 514);
+            this.panelProductDetail.Size = new System.Drawing.Size(926, 616);
             this.panelProductDetail.TabIndex = 7;
             // 
             // labelControl3
@@ -229,7 +252,7 @@
             this.panelProductDetailGrid.Controls.Add(this.gridProductDetail);
             this.panelProductDetailGrid.Location = new System.Drawing.Point(2, 62);
             this.panelProductDetailGrid.Name = "panelProductDetailGrid";
-            this.panelProductDetailGrid.Size = new System.Drawing.Size(862, 450);
+            this.panelProductDetailGrid.Size = new System.Drawing.Size(922, 552);
             this.panelProductDetailGrid.TabIndex = 1;
             // 
             // labelControl4
@@ -245,7 +268,7 @@
             this.gridProductDetail.Location = new System.Drawing.Point(2, 2);
             this.gridProductDetail.MainView = this.gridView2;
             this.gridProductDetail.Name = "gridProductDetail";
-            this.gridProductDetail.Size = new System.Drawing.Size(858, 446);
+            this.gridProductDetail.Size = new System.Drawing.Size(918, 548);
             this.gridProductDetail.TabIndex = 0;
             this.gridProductDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -266,34 +289,137 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(116, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(895, 520);
+            this.xtraTabControl1.Size = new System.Drawing.Size(955, 622);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.panelProduct);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(866, 514);
+            this.xtraTabPage1.Size = new System.Drawing.Size(926, 616);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.panelProductDetail);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(866, 514);
+            this.xtraTabPage2.Size = new System.Drawing.Size(926, 616);
             this.xtraTabPage2.Text = "xtraTabPage2";
             // 
-            // Form1
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.panelOrder);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(926, 616);
+            this.xtraTabPage3.Text = "xtraTabPage3";
+            // 
+            // panelOrder
+            // 
+            this.panelOrder.AutoSize = true;
+            this.panelOrder.Controls.Add(this.labelControl5);
+            this.panelOrder.Controls.Add(this.panelControl2);
+            this.panelOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOrder.Location = new System.Drawing.Point(0, 0);
+            this.panelOrder.Name = "panelOrder";
+            this.panelOrder.Size = new System.Drawing.Size(926, 616);
+            this.panelOrder.TabIndex = 7;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 15.25F);
+            this.labelControl5.Location = new System.Drawing.Point(21, 20);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(172, 24);
+            this.labelControl5.TabIndex = 3;
+            this.labelControl5.Text = "Order Management";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.gridOrder3);
+            this.panelControl2.Controls.Add(this.gridOrder);
+            this.panelControl2.Controls.Add(this.gridOrder2);
+            this.panelControl2.Controls.Add(this.labelControl6);
+            this.panelControl2.Location = new System.Drawing.Point(2, 62);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(925, 552);
+            this.panelControl2.TabIndex = 1;
+            // 
+            // gridOrder3
+            // 
+            this.gridOrder3.Location = new System.Drawing.Point(5, 375);
+            this.gridOrder3.MainView = this.gridView5;
+            this.gridOrder3.Name = "gridOrder3";
+            this.gridOrder3.Size = new System.Drawing.Size(687, 184);
+            this.gridOrder3.TabIndex = 3;
+            this.gridOrder3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5});
+            // 
+            // gridView5
+            // 
+            this.gridView5.ActiveFilterEnabled = false;
+            this.gridView5.GridControl = this.gridOrder3;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsBehavior.Editable = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridOrder
+            // 
+            this.gridOrder.Location = new System.Drawing.Point(5, 5);
+            this.gridOrder.MainView = this.gridView3;
+            this.gridOrder.Name = "gridOrder";
+            this.gridOrder.Size = new System.Drawing.Size(687, 184);
+            this.gridOrder.TabIndex = 2;
+            this.gridOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.gridOrder;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
+            this.gridView3.DoubleClick += new System.EventHandler(this.gridView3_DoubleClick);
+            // 
+            // gridOrder2
+            // 
+            this.gridOrder2.Location = new System.Drawing.Point(5, 192);
+            this.gridOrder2.MainView = this.gridView4;
+            this.gridOrder2.Name = "gridOrder2";
+            this.gridOrder2.Size = new System.Drawing.Size(687, 184);
+            this.gridOrder2.TabIndex = 1;
+            this.gridOrder2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.GridControl = this.gridOrder2;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.DoubleClick += new System.EventHandler(this.gridView4_DoubleClick);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(0, 0);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(0, 13);
+            this.labelControl6.TabIndex = 0;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 520);
-            this.Controls.Add(this.navBarControl1);
+            this.ClientSize = new System.Drawing.Size(1069, 622);
             this.Controls.Add(this.xtraTabControl1);
-            this.Name = "Form1";
+            this.Controls.Add(this.navBarControl1);
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelProductGrid)).EndInit();
@@ -318,6 +444,20 @@
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
             this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
+            this.xtraTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelOrder)).EndInit();
+            this.panelOrder.ResumeLayout(false);
+            this.panelOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,6 +488,17 @@
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.PanelControl panelOrder;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraGrid.GridControl gridOrder2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.GridControl gridOrder;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.GridControl gridOrder3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
 
 
     }
