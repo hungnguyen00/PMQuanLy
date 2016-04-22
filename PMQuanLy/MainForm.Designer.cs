@@ -63,6 +63,7 @@
             this.gridOrder2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtQrCode = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductGrid)).BeginInit();
             this.panelProductGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).BeginInit();
@@ -91,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrder2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQrCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bar3
@@ -342,6 +344,7 @@
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.txtQrCode);
             this.panelControl2.Controls.Add(this.gridOrder3);
             this.panelControl2.Controls.Add(this.gridOrder);
             this.panelControl2.Controls.Add(this.gridOrder2);
@@ -412,6 +415,14 @@
             this.labelControl6.Size = new System.Drawing.Size(0, 13);
             this.labelControl6.TabIndex = 0;
             // 
+            // txtQrCode
+            // 
+            this.txtQrCode.Location = new System.Drawing.Point(726, 208);
+            this.txtQrCode.Name = "txtQrCode";
+            this.txtQrCode.Size = new System.Drawing.Size(100, 20);
+            this.txtQrCode.TabIndex = 4;
+            this.txtQrCode.TextChanged += new System.EventHandler(this.txtQrCode_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,6 +469,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrder2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQrCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -499,6 +511,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.GridControl gridOrder3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraEditors.TextEdit txtQrCode;
 
 
     }

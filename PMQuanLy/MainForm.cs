@@ -112,11 +112,16 @@ namespace PMQuanLy
                 }
                 foreach (DataRow row in rows)
                 {
-                    dtProduct.ImportRow(row);
+                    dtInventory.ImportRow(row);
                 }
                 gridOrder.DataSource = dtInventory;
                 view.DeleteRow(view.FocusedRowHandle);
             }
+        }
+
+        private void txtQrCode_TextChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(dtProduct.Rows.Count.ToString());
         }
 
         /*private void DoRowDoubleClick(GridView view, Point pt)
