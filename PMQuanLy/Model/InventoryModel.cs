@@ -11,15 +11,16 @@ namespace PMQuanLy.Model
     {
         String table = "inventory";
 
-        public DataTable getAllProductDetail() 
+        public DataTable getAllInventory() 
         {
-            String select = " *";
+            String select = " p.name, i.qr_code, i.weight, i.created_date";
             String where = "";
+            table = "inventory i left join list_product p on i.product_code = p.product_code";
             SQLiteParameter[] arrValues = {};
             return selectQuery(select, table, where, arrValues);
         }
 
-        public DataTable getProductDetailByCode(int code)
+        public DataTable getInventoryByQrCode(int code)
         {
             String select = " code, product_detail_id, weight, status";
             String where = "code=@code";

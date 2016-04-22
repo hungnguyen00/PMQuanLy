@@ -43,7 +43,7 @@ namespace PMQuanLy
         private void LoadDataInventory()
         {
             dtInventory = new DataTable();
-            dtInventory = mInventory.getAllProductDetail();
+            dtInventory = mInventory.getAllInventory();
             bs.DataSource = dtInventory;
             gridProductDetail.DataSource = bs;
         }
@@ -52,13 +52,13 @@ namespace PMQuanLy
             dtInventory = new DataTable();
             dtOrder = new DataTable();
             dtOrder.Columns.Add("qr_code");
+            dtOrder.Columns.Add("name");
             dtOrder.Columns.Add("weight");
-            dtOrder.Columns.Add("product_code");
             dtOrder.Columns.Add("created_date");
-            gridOrder2.DataSource = dtOrder;
-            dtInventory = mInventory.getAllProductDetail();
+            gridOrderOrderProduct.DataSource = dtOrder;
+            dtInventory = mInventory.getAllInventory();
             bs.DataSource = dtInventory;
-            gridOrder.DataSource = bs;
+            gridOrderInventory.DataSource = bs;
         }   
 
         private void navBarProduct_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -84,18 +84,30 @@ namespace PMQuanLy
             GridHitInfo info = view.CalcHitInfo(pt);
             if (info.InRow || info.InRowCell)
             {
-                DataRow[] rows = new DataRow[view.SelectedRowsCount];
-                for (int i = 0; i < view.SelectedRowsCount; i++)
+                DataRow[] row = new DataRow[view.SelectedRowsCount];
+                /*for (int i = 0; i < view.SelectedRowsCount; i++)
                 {
-                    rows[i] = view.GetDataRow(view.GetSelectedRows()[i]);
-                }
-                foreach (DataRow row in rows)
+                    row[i] = view.GetDataRow(view.GetSelectedRows()[i]);
+                }*/
+                /*foreach (DataRow row in rows)
                 {
                     dtOrder.ImportRow(row);
-                }
+                }*/
+                row[0] = view.GetDataRow(view.GetSelectedRows()[0]);
+                /*dtOrder.ImportRow(row[0]);
                 gridOrder2.DataSource = dtOrder;
-                view.DeleteRow(view.FocusedRowHandle);
+                txtQrCode.Text = row[0]["qr_code"].ToString();
+                view.DeleteRow(view.FocusedRowHandle);*/
+                txtOrderQrCode.Text = row[0]["qr_code"].ToString();
             }
+        }
+        private void orderWithQrCode(String qr_code) 
+        {
+            DataRow[] row = dtInventory.Select(String.Format("qr_code = '{0}'",qr_code));
+            dtOrder.ImportRow(row[0]);
+            dtInventory.Rows.Remove(row[0]);
+            gridOrderOrderProduct.RefreshDataSource();
+            gridOrderInventory.RefreshDataSource();
         }
 
         private void gridView4_DoubleClick(object sender, EventArgs e)
@@ -105,23 +117,59 @@ namespace PMQuanLy
             GridHitInfo info = view.CalcHitInfo(pt);
             if (info.InRow || info.InRowCell)
             {
-                DataRow[] rows = new DataRow[view.SelectedRowsCount];
-                for (int i = 0; i < view.SelectedRowsCount; i++)
+                DataRow[] row = new DataRow[view.SelectedRowsCount];
+                /*for (int i = 0; i < view.SelectedRowsCount; i++)
                 {
                     rows[i] = view.GetDataRow(view.GetSelectedRows()[i]);
                 }
                 foreach (DataRow row in rows)
                 {
                     dtInventory.ImportRow(row);
-                }
-                gridOrder.DataSource = dtInventory;
+                }*/
+                row[0] = view.GetDataRow(view.GetSelectedRows()[0]);
+                dtInventory.ImportRow(row[0]);
+                gridOrderInventory.DataSource = dtInventory;
                 view.DeleteRow(view.FocusedRowHandle);
             }
         }
 
         private void txtQrCode_TextChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(dtProduct.Rows.Count.ToString());
+            if (txtOrderQrCode.Text.Length == 27) 
+            {
+                orderWithQrCode(txtOrderQrCode.Text.ToString());
+            }
+        }
+
+        private void txtOrderSearchProductName_TextChanged(object sender, EventArgs e)
+        {
+            customFilterInventory();
+        }
+
+        private void txtOrderSearchProductCode_TextChanged(object sender, EventArgs e)
+        {
+            customFilterInventory();
+        }
+
+        private void customFilterInventory() 
+        {
+
+            String key1 = "name",
+                   key2 = "product_code";
+            String value1 = txtOrderSearchProductName.Text.ToString(),
+                   value2 = txtOrderSearchProductCode.Text.ToString();
+
+            String filterString = "1 = 1 ";
+
+            if (!value1.Equals(""))
+            {
+                filterString += String.Format(" AND [{0}] LIKE '%{1}%'", key1, value1);
+            }
+            if (!value2.Equals(""))
+            {
+                filterString += String.Format(" AND [{0}] LIKE '%{1}%'", key2, value2);
+            }
+            gridView3.ActiveFilterString = filterString;
         }
 
         /*private void DoRowDoubleClick(GridView view, Point pt)
